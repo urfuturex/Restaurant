@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Địa điểm - Wa Japanese Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="top-banner">
+    MIỄN PHÍ ĐẶT HÀNG 5KM <br />
+    <small>Giảm giá lên tới 20% khi đặt bàn 5 người</small>
+  </div>
+  <header>
+    <nav>
+      <button class="menu-toggle" aria-label="Mở/đóng menu">☰</button>
+      <div class="nav-left">
+        <a href="home.html">Đặt bàn</a>
+        <a href="menu.html">Thực đơn</a>
+        <a href="about.html">Về chúng tôi</a>
+        <a href="story.html">Lịch sử</a>
+      </div>
+      <div class="nav-right" aria-label="Liên kết biểu tượng">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <a href="cart.html" style="position: relative; display: inline-block;" aria-label="Giỏ hàng">
+          <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a1 1 0 0 0 .99.61h12.72a1 1 0 0 0 .96-.73l3.38-12.07H6"></path></svg>
+          <span id="cartBadge" class="cart-badge">0</span>
+        </a>
+        <a href="login.html" aria-label="Đăng nhập">
+          <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><path d="M20 21v-2a4 4 0 0 0-3-3.87"></path><path d="M4 21v-2a4 4 0 0 1 3-3.87"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="locations-page">
+    <!-- Tab Navigation -->
+    <section class="story-tabs">
+      <div class="container">
+        <div class="tabs-wrapper">
+          <button class="story-tab" onclick="window.location.href='story.html'">Câu chuyện</button>
+          <button class="story-tab active">Địa điểm</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Banner -->
+    <section class="locations-hero">
+      <div class="locations-hero-overlay"></div>
+      <div class="locations-hero-content">
+        <h1>KHÁM PHÁ THÊM CÁC ĐỊA<br/>ĐIỂM CỦA CHÚNG TÔI</h1>
+      </div>
+    </section>
+
+    <!-- Locations List -->
+    <section class="locations-list">
+      <div class="container">
+        
+        <!-- Location 1 -->
+        <div class="location-item">
+          <div class="location-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096885247474!2d105.8241550753406!3d21.02880088062169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab953357c995%3A0x434ad3d9e9be7768!2zSOG7kyBIb8OgbiBLaeG6v20sIEjDoCBO4buZaSwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="location-info">
+            <div class="location-details">
+              <h3>Địa chỉ</h3>
+              <p>Số 1, Hai Bà Trưng</p>
+              
+              <h3>Số điện thoại</h3>
+              <p>+84123456789</p>
+              
+              <h3>Giờ mở cửa</h3>
+              <p><strong>mon - thu:</strong> 7:00am-8:00pm</p>
+              <p><strong>fri:</strong> 7:00am-9:00pm</p>
+              <p><strong>sat:</strong> 8:00am-9:00pm</p>
+              <p><strong>sun:</strong> 8:00am-8:00pm</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Hồ+Hoàn+Kiếm,+Hà+Nội" target="_blank" class="btn-view-map">xem địa chỉ</a>
+          </div>
+        </div>
+
+        <!-- Location 2 -->
+        <div class="location-item">
+          <div class="location-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4966658893744!2d105.84117507534021!3d21.01727998065037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86cece8f43%3A0x8a3bcc3b51c659db!2zVGjDoW5oIHBo4buRIEjDoCBO4buZaQ!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="location-info">
+            <div class="location-details">
+              <h3>Địa chỉ</h3>
+              <p>Số 1, Hai Bà Trưng</p>
+              
+              <h3>Số điện thoại</h3>
+              <p>+84123456789</p>
+              
+              <h3>Giờ mở cửa</h3>
+              <p><strong>mon - thu:</strong> 7:00am-8:00pm</p>
+              <p><strong>fri:</strong> 7:00am-9:00pm</p>
+              <p><strong>sat:</strong> 8:00am-9:00pm</p>
+              <p><strong>sun:</strong> 8:00am-8:00pm</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Thành+phố+Hà+Nội" target="_blank" class="btn-view-map">xem địa chỉ</a>
+          </div>
+        </div>
+
+        <!-- Location 3 -->
+        <div class="location-item">
+          <div class="location-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.657904211582!2d105.81390507534093!3d21.045543880353486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aafe7260066b%3A0x4c2c988a8b96144c!2zVOG6p20gQ-G7mWMgVOG6pXksIFRoxrDhu6FuZyDEkOG6rXQsIELhuqEgxJDDrG5oLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="location-info">
+            <div class="location-details">
+              <h3>Địa chỉ</h3>
+              <p>Số 1, Hai Bà Trưng</p>
+              
+              <h3>Số điện thoại</h3>
+              <p>+84123456789</p>
+              
+              <h3>Giờ mở cửa</h3>
+              <p><strong>mon - thu:</strong> 7:00am-8:00pm</p>
+              <p><strong>fri:</strong> 7:00am-9:00pm</p>
+              <p><strong>sat:</strong> 8:00am-9:00pm</p>
+              <p><strong>sun:</strong> 8:00am-8:00pm</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Tầm+Cỡ+Tây" target="_blank" class="btn-view-map">xem địa chỉ</a>
+          </div>
+        </div>
+
+        <!-- Location 4 -->
+        <div class="location-item">
+          <div class="location-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.736923891596!2d105.8467575753398!3d21.006149380708194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac880e2fce57%3A0x8ebe5da89e8c2a3b!2zUGjhu5EgxJDhu6ljaCBMw6JuZywgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="location-info">
+            <div class="location-details">
+              <h3>Địa chỉ</h3>
+              <p>Số 1, Hai Bà Trưng</p>
+              
+              <h3>Số điện thoại</h3>
+              <p>+84123456789</p>
+              
+              <h3>Giờ mở cửa</h3>
+              <p><strong>mon - thu:</strong> 7:00am-8:00pm</p>
+              <p><strong>fri:</strong> 7:00am-9:00pm</p>
+              <p><strong>sat:</strong> 8:00am-9:00pm</p>
+              <p><strong>sun:</strong> 8:00am-8:00pm</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Phố+Đức+Lâng,+Hà+Nội" target="_blank" class="btn-view-map">xem địa chỉ</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="about">
+        <h3>More Than A Bakery</h3>
+        <p><strong>Who we are?</strong><br />
+        More Than A Bakery was created by passionate foodies who believe restaurants share happiness beyond basic need for food and enjoy eating.</p>
+        <p><strong>Contact</strong><br />
+        Tickets@contactsbakery@.com</p>
+        <p>©2024 NOT FULLTIME PVT LTD.</p>
+      </div>
+      <div class="help">
+        <h3>Help</h3>
+        <a href="#">Concert Ticketing</a>
+        <a href="#">Account Support</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="legal">
+        <h3>Legal</h3>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessories</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="social-icons">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  
+  <!-- Chatbot widget -->
+  <div class="chatbot" aria-hidden="false">
+    <div class="chatbot-bubble" id="chatbotBubble" role="button" aria-label="Gợi ý">
+      <div class="icon" aria-hidden="true">
+        <img src="assets/Group.png" alt="Bot icon" class="chatbot-icon" />
+      </div>
+      <p>Xin chào! Tôi sẽ gợi ý thực đơn hôm nay cho bạn.</p>
+    </div>
+
+    <button class="chatbot-button" id="chatbotToggle" aria-label="Mở chat">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </button>
+
+    <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="Chat với Trợ lý Wa" aria-hidden="true">
+      <div class="chatbot-header">
+        <strong>Trợ lý Wa</strong>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button id="chatbotMinimize" aria-label="Thu nhỏ" title="Thu nhỏ" style="background:none;border:none;cursor:pointer;font-size:18px;">—</button>
+          <button id="chatbotClose" aria-label="Đóng" title="Đóng" style="background:none;border:none;cursor:pointer;font-size:18px;">✕</button>
+        </div>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages" aria-live="polite"></div>
+      <div class="chatbot-input">
+        <input id="chatbotInput" type="text" placeholder="Nhập tin nhắn..." aria-label="Nhập tin nhắn" />
+        <button id="chatbotSend">Gửi</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
