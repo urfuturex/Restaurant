@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Giỏ hàng - Wa Japanese Cuisine</title>
+  <title>Đặt Bàn Thành Công - Wa Japanese Cuisine</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=success1">
 </head>
 <body>
   <div class="top-banner">
@@ -16,7 +16,7 @@
     <nav>
       <button class="menu-toggle" aria-label="Mở/đóng menu">☰</button>
       <div class="nav-left">
-        <a href="home.html">Đặt bàn</a>
+        <a href="reserve.html">Đặt bàn</a>
         <a href="menu.html">Thực đơn</a>
         <a href="about.html">Về chúng tôi</a>
         <a href="story.html">Lịch sử</a>
@@ -34,94 +34,69 @@
     </nav>
   </header>
 
-  <main class="cart-page">
+  <main class="booking-success-page">
     <div class="container">
-      <h1 class="cart-title">Giỏ Hàng</h1>
-      
-      <!-- Progress Steps -->
-      <div class="checkout-progress">
-        <div class="progress-step active">
-          <div class="step-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 11l3 3L22 4"></path>
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-            </svg>
-          </div>
-          <span>Cart</span>
+      <!-- Success Icon and Title -->
+      <div class="success-header">
+        <div class="success-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
         </div>
-        <div class="progress-line"></div>
-        <div class="progress-step">
-          <div class="step-circle">2</div>
-          <span>Address</span>
-        </div>
-        <div class="progress-line"></div>
-        <div class="progress-step">
-          <div class="step-circle">3</div>
-          <span>Payment</span>
-        </div>
-        <div class="progress-line"></div>
-        <div class="progress-step">
-          <div class="step-circle">4</div>
-          <span>Confirm</span>
-        </div>
+        <h1>Đã đặt bàn thành công</h1>
       </div>
 
-      <!-- Empty Cart State -->
-      <div id="emptyCart" class="empty-cart-state" style="display: none;">
-        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a1 1 0 0 0 .99.61h12.72a1 1 0 0 0 .96-.73l3.38-12.07H6"></path>
-        </svg>
-        <h2>Giỏ hàng trống</h2>
-        <p>Bạn chưa có món ăn nào trong giỏ hàng</p>
-        <button onclick="window.location.href='menu.html'" class="btn-continue-shopping">Xem thực đơn</button>
-      </div>
-
-      <!-- Cart Items Table -->
-      <div id="cartContent" class="cart-content">
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Portion</th>
-              <th>Price</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="cartTableBody">
-            <!-- Cart items will be loaded here -->
-          </tbody>
-        </table>
-
-        <!-- Cart Summary -->
-        <div class="cart-summary-section">
-          <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotalAmount">0 đ</span>
-          </div>
-          <div class="summary-row">
-            <span>Service Fees</span>
-            <span id="serviceFees">0 đ</span>
-          </div>
-          <div class="summary-row total-row">
-            <span>Total VND (<span id="itemCount">0</span> item)</span>
-            <span id="totalAmount">0 đ</span>
-          </div>
+      <!-- Booking Info Section -->
+      <section class="booking-info-section">
+        <h2>Thông tin đặt bàn</h2>
+        <div class="info-table-wrapper">
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>Người đặt bàn</th>
+                <th>Số người</th>
+                <th>Bàn</th>
+                <th>Liên hệ</th>
+                <th>Ngày</th>
+                <th>Giờ</th>
+              </tr>
+            </thead>
+            <tbody id="currentBookingInfo">
+              <!-- Will be populated by JavaScript -->
+            </tbody>
+          </table>
         </div>
+        <button class="btn-view-details" onclick="window.location.href='menu.html'">Lưu thông tin</button>
+      </section>
 
-        <!-- Action Button -->
-        <div class="cart-actions">
-          <button class="btn-next" onclick="handleCheckout()">Tiếp theo</button>
+      <!-- Booking History Section -->
+      <section class="booking-history-section">
+        <h2>Lịch sử đặt bàn</h2>
+        <div class="history-table-wrapper">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Giờ</th>
+                <th>Người đặt bàn</th>
+                <th>Số người</th>
+                <th>Bàn</th>
+                <th>Liên hệ</th>
+              </tr>
+            </thead>
+            <tbody id="bookingHistoryList">
+              <!-- Will be populated by JavaScript -->
+            </tbody>
+          </table>
         </div>
-      </div>
+      </section>
     </div>
   </main>
 
   <footer>
     <div class="container">
       <div class="about">
-        <h3>More Than A Bakery</h3>
+        <h3>Wa Japanese Cuisine</h3>
         <p><strong>Who we are?</strong><br />
         KITLALA is a global ticketing platform for live experiences that allows anyone to create, share, find and attend events that fuel their passions and enrich their lives.</p>
         <p><strong>Contact</strong><br />
@@ -155,8 +130,6 @@
   </footer>
 
   <script src="js/scripts.js"></script>
-  <!-- Cart Management: Dùng cart.js cho database thật, cart-mock.js để test nhanh -->
-  <script src="js/cart-mock.js"></script>
-  <!-- <script src="js/cart.js?v=2"></script> -->
+  <script src="js/booking-success.js"></script>
 </body>
 </html>

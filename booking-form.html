@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Giỏ hàng - Wa Japanese Cuisine</title>
+  <title>Thông Tin Đặt Bàn - Wa Japanese Cuisine</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=booking1">
 </head>
 <body>
   <div class="top-banner">
@@ -16,7 +16,7 @@
     <nav>
       <button class="menu-toggle" aria-label="Mở/đóng menu">☰</button>
       <div class="nav-left">
-        <a href="home.html">Đặt bàn</a>
+        <a href="reserve.html">Đặt bàn</a>
         <a href="menu.html">Thực đơn</a>
         <a href="about.html">Về chúng tôi</a>
         <a href="story.html">Lịch sử</a>
@@ -34,94 +34,88 @@
     </nav>
   </header>
 
-  <main class="cart-page">
+  <main class="booking-form-page">
     <div class="container">
-      <h1 class="cart-title">Giỏ Hàng</h1>
-      
-      <!-- Progress Steps -->
-      <div class="checkout-progress">
-        <div class="progress-step active">
-          <div class="step-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 11l3 3L22 4"></path>
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-            </svg>
-          </div>
-          <span>Cart</span>
+      <h1 class="booking-title">Thông Tin Đặt Bàn</h1>
+      <p class="booking-subtitle">Our dining atmosphere is casual and comfortable. To reflect this environment, we maintain a formal dress.</p>
+
+      <!-- Booking Summary Box -->
+      <div class="booking-summary-box">
+        <div class="summary-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span id="bookingLocation">Số 1, Hai Bà Trưng, Hà Nội</span>
         </div>
-        <div class="progress-line"></div>
-        <div class="progress-step">
-          <div class="step-circle">2</div>
-          <span>Address</span>
+        
+        <div class="summary-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span id="bookingGuests">2 người</span>
         </div>
-        <div class="progress-line"></div>
-        <div class="progress-step">
-          <div class="step-circle">3</div>
-          <span>Payment</span>
+        
+        <div class="summary-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span id="bookingDateTime">5/11/2025, 19:30 pm</span>
         </div>
-        <div class="progress-line"></div>
-        <div class="progress-step">
-          <div class="step-circle">4</div>
-          <span>Confirm</span>
+        
+        <div class="summary-time-slot">
+          <span>Thời gian giữ chỗ</span>
+          <strong id="timeRemaining">80:35 s</strong>
         </div>
       </div>
 
-      <!-- Empty Cart State -->
-      <div id="emptyCart" class="empty-cart-state" style="display: none;">
-        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a1 1 0 0 0 .99.61h12.72a1 1 0 0 0 .96-.73l3.38-12.07H6"></path>
-        </svg>
-        <h2>Giỏ hàng trống</h2>
-        <p>Bạn chưa có món ăn nào trong giỏ hàng</p>
-        <button onclick="window.location.href='menu.html'" class="btn-continue-shopping">Xem thực đơn</button>
-      </div>
-
-      <!-- Cart Items Table -->
-      <div id="cartContent" class="cart-content">
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Portion</th>
-              <th>Price</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="cartTableBody">
-            <!-- Cart items will be loaded here -->
-          </tbody>
-        </table>
-
-        <!-- Cart Summary -->
-        <div class="cart-summary-section">
-          <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotalAmount">0 đ</span>
-          </div>
-          <div class="summary-row">
-            <span>Service Fees</span>
-            <span id="serviceFees">0 đ</span>
-          </div>
-          <div class="summary-row total-row">
-            <span>Total VND (<span id="itemCount">0</span> item)</span>
-            <span id="totalAmount">0 đ</span>
-          </div>
+      <!-- Booking Form -->
+      <form class="booking-form" id="bookingForm" onsubmit="handleBookingSubmit(event)">
+        <div class="form-group">
+          <label for="customerName">Name</label>
+          <input type="text" id="customerName" required>
         </div>
 
-        <!-- Action Button -->
-        <div class="cart-actions">
-          <button class="btn-next" onclick="handleCheckout()">Tiếp theo</button>
+        <div class="form-group">
+          <label for="numberOfGuests">Number of guests</label>
+          <input type="number" id="numberOfGuests" min="1" value="2" required>
         </div>
-      </div>
+
+        <div class="form-group">
+          <label for="guestsOver60">Over or equal 60 years old</label>
+          <input type="number" id="guestsOver60" min="0" value="0">
+        </div>
+
+        <div class="form-group">
+          <label for="guestsUnder3">Under or equal 3 years old</label>
+          <input type="number" id="guestsUnder3" min="0" value="0">
+        </div>
+
+        <div class="form-group">
+          <label for="contactPhone">Contact</label>
+          <input type="tel" id="contactPhone" placeholder="+84012345678" required>
+        </div>
+
+        <div class="form-group">
+          <label for="noteForRestaurant">Note for restaurant</label>
+          <textarea id="noteForRestaurant" rows="3" placeholder="Example: birthday, party, ect..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-booking">Đặt bàn</button>
+      </form>
     </div>
   </main>
 
   <footer>
     <div class="container">
       <div class="about">
-        <h3>More Than A Bakery</h3>
+        <h3>Wa Japanese Cuisine</h3>
         <p><strong>Who we are?</strong><br />
         KITLALA is a global ticketing platform for live experiences that allows anyone to create, share, find and attend events that fuel their passions and enrich their lives.</p>
         <p><strong>Contact</strong><br />
@@ -155,8 +149,6 @@
   </footer>
 
   <script src="js/scripts.js"></script>
-  <!-- Cart Management: Dùng cart.js cho database thật, cart-mock.js để test nhanh -->
-  <script src="js/cart-mock.js"></script>
-  <!-- <script src="js/cart.js?v=2"></script> -->
+  <script src="js/booking-form.js"></script>
 </body>
 </html>

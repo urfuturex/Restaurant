@@ -146,8 +146,31 @@
         <!-- Tab Lịch sử -->
         <div class="tab-panel" id="tab-history">
           <div class="order-history">
-            <h2>Lịch sử đơn hàng</h2>
-            <p class="empty-state">Bạn chưa có đơn hàng nào</p>
+            <!-- Date Slider -->
+            <div class="date-slider-container">
+              <button class="date-nav-btn prev" id="datePrevBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <div class="date-slider" id="dateSlider">
+                <!-- Dates will be populated by JavaScript -->
+              </div>
+              <button class="date-nav-btn next" id="dateNextBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Order Cards -->
+            <div class="order-cards-container" id="orderCardsContainer">
+              <!-- Order cards will be populated by JavaScript -->
+            </div>
+
+            <div class="empty-state" id="emptyState" style="display: none;">
+              <p>Không có đơn hàng nào trong ngày này</p>
+            </div>
           </div>
         </div>
 

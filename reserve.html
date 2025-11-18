@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Đặt Bàn Trực Tuyến - Wa Japanese Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=reserve4">
+</head>
+<body>
+  <div class="top-banner">
+    MIỄN PHÍ ĐẶT HÀNG <5KM <br/>
+    <small>Giảm giá lên tới 20% khi đặt bàn 5 người</small>
+  </div>
+  <header>
+    <nav>
+      <button class="menu-toggle" aria-label="Mở/đóng menu">☰</button>
+      <div class="nav-left">
+        <a href="home.html">Đặt bàn</a>
+        <a href="menu.html">Thực đơn</a>
+        <a href="about.html">Về chúng tôi</a>
+        <a href="story.html">Lịch sử</a>
+      </div>
+      <div class="nav-right" aria-label="Liên kết biểu tượng">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <a href="cart.html" style="position: relative; display: inline-block;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a1 1 0 0 0 .99.61h12.72a1 1 0 0 0 .96-.73l3.38-12.07H6"></path></svg>
+          <span id="cartBadge" class="cart-badge">0</span>
+        </a>
+        <a href="login.html">
+          <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><path d="M20 21v-2a4 4 0 0 0-3-3.87"></path><path d="M4 21v-2a4 4 0 0 1 3-3.87"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="reserve-page">
+    <!-- Hero Banner -->
+    <section class="reserve-hero">
+      <div class="reserve-hero-overlay"></div>
+      <div class="reserve-hero-content">
+        <h1>Đặt Bàn Trực Tuyến</h1>
+        <p>Đặt bàn tại các nhà hàng của chúng tôi tại thành phố Hà Nội</p>
+      </div>
+      
+      <div class="reserve-search-box">
+        <div class="search-field">
+            <label>Chi nhánh</label>
+            <select id="branchSelect">
+              <option value="">Tất cả các nhà hàng</option>
+              <option value="hbt">Số 1, Hai Bà Trưng</option>
+              <option value="hbt2">Số 1, Hai Bà Trưng</option>
+              <option value="hbt3">Số 1, Hai Bà Trưng</option>
+            </select>
+          </div>
+          
+          <div class="search-field">
+            <label>Số người</label>
+            <select id="guestCount">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10+</option>
+            </select>
+          </div>
+          
+          <div class="search-field">
+            <label>Ngày</label>
+            <input type="date" id="reserveDate" value="2024-01-01">
+          </div>
+          
+          <div class="search-field">
+            <label>Giờ</label>
+            <input type="time" id="reserveTime" value="19:30">
+          </div>
+          
+          <button class="btn-search" onclick="searchRestaurants()">Tìm kiếm</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant Locations -->
+    <section class="reserve-locations">
+      <div class="container">
+        <div class="location-card">
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4969379535!2d105.85117731476295!3d21.012368693701584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86ceb26441%3A0xbe3061e6468ec244!2zMSDEkC4gSGFpIELDoCBUcsawbmcsIEjDoG5nIELDoGksIEhvw6BuIEtp4bq_bSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1638000000000!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="location-info">
+            <h3>Cơ sở</h3>
+            <p class="location-name">Số 1, Hai Bà Trưng</p>
+            <p class="location-phone">Số điện thoại<br/>+84123456789</p>
+            <p class="location-capacity">Số lượng bàn còn trống<br/><strong>6</strong></p>
+            <button class="btn-book" onclick="bookRestaurant('hbt1')">Đặt Bàn</button>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4969379535!2d105.85117731476295!3d21.012368693701584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86ceb26441%3A0xbe3061e6468ec244!2zMSDEkC4gSGFpIELDoCBUcsawbmcsIEjDoG5nIELDoGksIEhvw6BuIEtp4bq_bSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1638000000000!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="location-info">
+            <h3>Cơ sở</h3>
+            <p class="location-name">Số 1, Hai Bà Trưng</p>
+            <p class="location-phone">Số điện thoại<br/>+84123456789</p>
+            <p class="location-capacity">Số lượng bàn còn trống<br/><strong>6</strong></p>
+            <button class="btn-book" onclick="bookRestaurant('hbt2')">Đặt Bàn</button>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4969379535!2d105.85117731476295!3d21.012368693701584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86ceb26441%3A0xbe3061e6468ec244!2zMSDEkC4gSGFpIELDoCBUcsawbmcsIEjDoG5nIELDoGksIEhvw6BuIEtp4bq_bSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1638000000000!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="location-info">
+            <h3>Cơ sở</h3>
+            <p class="location-name">Số 1, Hai Bà Trưng</p>
+            <p class="location-phone">Số điện thoại<br/>+84123456789</p>
+            <p class="location-capacity">Số lượng bàn còn trống<br/><strong>6</strong></p>
+            <button class="btn-book" onclick="bookRestaurant('hbt3')">Đặt Bàn</button>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4969379535!2d105.85117731476295!3d21.012368693701584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86ceb26441%3A0xbe3061e6468ec244!2zMSDEkC4gSGFpIELDoCBUcsawbmcsIEjDoG5nIELDoGksIEhvw6BuIEtp4bq_bSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1638000000000!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="location-info">
+            <h3>Cơ sở</h3>
+            <p class="location-name">Số 1, Hai Bà Trưng</p>
+            <p class="location-phone">Số điện thoại<br/>+84123456789</p>
+            <p class="location-capacity">Số lượng bàn còn trống<br/><strong>6</strong></p>
+            <button class="btn-book" onclick="bookRestaurant('hbt4')">Đặt Bàn</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="about">
+        <h3>Wa Japanese Cuisine</h3>
+        <p><strong>Chúng tôi là ai?</strong><br />
+        Wa Japanese Cuisine là chuỗi nhà hàng Nhật Bản cao cấp, mang đến trải nghiệm ẩm thực đích thực với hương vị truyền thống và không gian thanh lịch.</p>
+        <p><strong>Liên hệ</strong><br />
+        contact@wajapanese.com</p>
+        <p>©2024 WA JAPANESE CUISINE</p>
+      </div>
+      <div class="help">
+        <h3>Trợ giúp</h3>
+        <a href="#">Hướng dẫn đặt bàn</a>
+        <a href="#">Hỗ trợ tài khoản</a>
+        <a href="#">Điều khoản & Điều kiện</a>
+      </div>
+      <div class="legal">
+        <h3>Pháp lý</h3>
+        <a href="#">Điều khoản sử dụng</a>
+        <a href="#">Chấp nhận</a>
+        <a href="#">Chính sách bảo mật</a>
+      </div>
+      <div class="social-icons">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/reserve.js"></script>
+</body>
+</html>

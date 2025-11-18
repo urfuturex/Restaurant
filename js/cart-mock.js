@@ -261,8 +261,8 @@ function removeFromCart(cartId) {
  * Handle checkout
  */
 function handleCheckout() {
-    alert('Chức năng thanh toán đang được phát triển');
-    // window.location.href = 'checkout.html';
+    // Navigate to checkout page
+    window.location.href = 'checkout.html';
 }
 
 /**

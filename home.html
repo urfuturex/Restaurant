@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=10">
 </head>
 <body>
   <div class="top-banner">
@@ -19,7 +19,7 @@
     <nav>
       <button class="menu-toggle" aria-label="Mở/đóng menu">☰</button>
       <div class="nav-left">
-        <a href="home.html">Đặt bàn</a>
+        <a href="reserve.html">Đặt bàn</a>
         <a href="menu.html">Thực đơn</a>
         <a href="about.html">Về chúng tôi</a>
         <a href="story.html">Lịch sử</a>
@@ -62,7 +62,7 @@
   <div class="hero-buttons" role="tablist" aria-label="Tùy chọn menu giới thiệu">
     <button type="button" role="tab" aria-selected="false" onclick="window.location.href='menu.html'">Thực đơn</button>
     <button type="button" role="tab" aria-selected="false" onclick="window.location.href='locations.html'">Nhà hàng</button>
-    <button type="button" role="tab" aria-selected="true" onclick="window.location.href='menu.html'">Đặt bàn</button>
+    <button type="button" role="tab" aria-selected="true" onclick="window.location.href='reserve.html'">Đặt bàn</button>
       </div>
     </div>
   </section>
@@ -82,9 +82,9 @@
       <div class="carousel-wrapper">
       <div class="arrow arrow-left" role="button" aria-label="Món trước">&lt;</div>
       <div class="food-slider stage" aria-live="polite" aria-atomic="true">
-        <img class="img-left" src="assets/dish1.png" alt="Đĩa sushi ngon" />
-        <img class="img-center" src="assets/dish2.png" alt="Sashimi cá hồi tươi" />
-        <img class="img-right" src="assets/dish3.png" alt="Bát mì ramen" />
+        <a href="menu.html"><img class="img-left" src="assets/dish1.png" alt="Đĩa sushi ngon" style="cursor: pointer;" /></a>
+        <a href="menu.html"><img class="img-center" src="assets/dish2.png" alt="Sashimi cá hồi tươi" style="cursor: pointer;" /></a>
+        <a href="menu.html"><img class="img-right" src="assets/dish3.png" alt="Bát mì ramen" style="cursor: pointer;" /></a>
       </div>
       <div class="arrow arrow-right" role="button" aria-label="Món tiếp">&gt;</div>
     </div>
@@ -120,23 +120,22 @@
         <p><strong>Chúng tôi là ai?</strong><br />
           Wa Japanese Cuisine là một nhà hàng ẩm thực Nhật Bản cao cấp, nơi chúng tôi mang đến trải nghiệm ẩm thực tuyệt vời với các món ăn truyền thống và hiện đại. Chúng tôi cam kết sử dụng nguyên liệu tươi sạch tốt nhất để phục vụ khách hàng.</p>
       </div>
-      <div class="contact">
-        <h3>Liên hệ</h3>
+            <div class="contact">
+        <h3>Wa Japanese Cuisine</h3>
         <p>Email: contact@wajapanese.com</p>
-        <p>Phone: +84 (0) 123 456 789</p>
+        <p>Điện thoại: +84 123 456 789</p>
         <p>©2024 WA JAPANESE CUISINE</p>
       </div>
       <div class="help">
         <h3>Trợ giúp</h3>
-        <a href="#">Đặt vé</a>
-        <a href="#">Hỗ trợ tài khoản</a>
-        <a href="#">Điều khoản &amp; Điều kiện</a>
+        <a href="#">Câu hỏi thường gặp</a>
+        <a href="#">Hỗ trợ</a>
+        <a href="#">Điều khoản</a>
       </div>
       <div class="legal">
         <h3>Pháp lý</h3>
+        <a href="#">Bảo mật</a>
         <a href="#">Điều khoản sử dụng</a>
-        <a href="#">Quy định</a>
-        <a href="#">Chính sách bảo mật</a>
       </div>
     </div>
   </footer>

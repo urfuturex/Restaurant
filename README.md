@@ -1,101 +1,53 @@
-# 🍱 WA Japanese Cuisine - Restaurant Reservation System
+# WA JAPANESE CUISINE - SHOPPING CART SYSTEM
+## Hướng dẫn triển khai Database và Giỏ hàng
 
-Hệ thống đặt bàn và quản lý nhà hàng Nhật Bản với giao diện hiện đại, tích hợp giỏ hàng, thanh toán và quản lý tài khoản người dùng.
+---
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![PHP](https://img.shields.io/badge/PHP-7.4+-purple.svg)
-![MySQL](https://img.shields.io/badge/MySQL-5.7+-orange.svg)
+## 📋 YÊU CẦU HỆ THỐNG
 
-## ✨ Tính năng
+- **Web Server**: Apache hoặc Nginx
+- **PHP**: Version 7.4 trở lên
+- **MySQL**: Version 5.7 trở lên hoặc MariaDB 10.3+
+- **Browser**: Chrome, Firefox, Safari, Edge (phiên bản mới nhất)
 
-### 🎨 Giao diện
-- ✅ Trang chủ với slider và giới thiệu nhà hàng
-- ✅ Menu món ăn với hình ảnh và giá
-- ✅ Responsive design (mobile, tablet, desktop)
-- ✅ Hiệu ứng animation mượt mà
+---
 
-### 🛒 Giỏ hàng
-- ✅ Thêm/xóa/cập nhật số lượng món
-- ✅ Tính tổng tiền tự động
-- ✅ Lưu giỏ hàng vào localStorage
-- ✅ Badge hiển thị số lượng món
+## 🚀 HƯỚNG DẪN CÀI ĐẶT
 
-### � Quản lý tài khoản
-- ✅ Đăng ký/Đăng nhập với mã hóa password
-- ✅ Trang profile với tabs (Thông tin, Lịch sử, Ưu đãi)
-- ✅ Cập nhật thông tin cá nhân
-- ✅ Đổi mật khẩu
-- ✅ **Upload ảnh đại diện với preview ngay lập tức**
-- ✅ Đăng xuất
+### Bước 1: Cài đặt Database
 
-### 🎯 Tính năng mới nhất
-- 📸 **Avatar Upload**: Upload ảnh profile, preview ngay, lưu vào database
-- 🔒 **Session Management**: Quản lý phiên đăng nhập an toàn
-- 💾 **LocalStorage Sync**: Đồng bộ dữ liệu user giữa các trang
-
-## 🚀 Cài đặt
-
-### Yêu cầu hệ thống
-- PHP 7.4 trở lên
-- MySQL 5.7 trở lên
-- Apache Server (XAMPP, WAMP, MAMP)
-- Web browser hiện đại (Chrome, Firefox, Safari)
-
-### Bước 1: Clone repository
-```bash
-git clone https://github.com/YOUR_USERNAME/restaurant-reservation.git
-cd restaurant-reservation
-```
-
-### Bước 2: Cấu hình Database
-
-1. **Tạo database trong phpMyAdmin:**
-   - Truy cập: http://localhost/phpmyadmin
-   - Tạo database tên: `wa_japanese_cuisine`
-   - Chọn Collation: `utf8mb4_unicode_ci`
-
-2. **Import schema:**
-   ```bash
-   # Trong phpMyAdmin, chọn database vừa tạo
-   # Click tab "Import" → Chọn file database/schema.sql → Click "Go"
+1. Mở **phpMyAdmin** hoặc MySQL command line
+2. Tạo database mới:
+   ```sql
+   CREATE DATABASE wa_japanese_cuisine CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
    ```
-   
-   Hoặc dùng command line:
+
+3. Import file schema:
+   - Mở file `database/schema.sql`
+   - Copy toàn bộ nội dung
+   - Paste vào phpMyAdmin SQL tab và Execute
+   - Hoặc dùng command line:
    ```bash
    mysql -u root -p wa_japanese_cuisine < database/schema.sql
    ```
 
-3. **Cấu hình kết nối:**
-   ```bash
-   # Copy file config mẫu
-   cp php/config.example.php php/config.php
-   
-   # Sửa file php/config.php với thông tin database của bạn
+### Bước 2: Cấu hình Database Connection
+
+1. Mở file `php/config.php`
+2. Cập nhật thông tin kết nối database:
+   ```php
+   define('DB_HOST', 'localhost');      // Host của database
+   define('DB_USER', 'root');           // Username MySQL
+   define('DB_PASS', '');               // Password MySQL
+   define('DB_NAME', 'wa_japanese_cuisine');  // Tên database
    ```
 
-### Bước 3: Cấu hình thư mục uploads
-
-```bash
-# Tạo thư mục và set quyền
-mkdir -p uploads/avatars
-chmod 777 uploads/avatars
-```
-
-### Bước 4: Chạy ứng dụng
-
-1. **Với XAMPP:**
-   ```bash
-   # Copy toàn bộ project vào htdocs
-   cp -r . /Applications/XAMPP/xamppfiles/htdocs/restaurant-reservation
-   
-   # Truy cập: http://localhost/restaurant-reservation/home.html
+3. Cập nhật SITE_URL nếu cần:
+   ```php
+   define('SITE_URL', 'http://localhost/Restaurant%20reservation');
    ```
 
-2. **Với PHP Built-in Server:**
-   ```bash
-   php -S localhost:8000
-   # Truy cập: http://localhost:8000/home.html
-   ```
+### Bước 3: Cập nhật Menu Items với Item IDs
 
 Mở file `menu.html` và thêm `data-item-id` cho mỗi menu card:
 

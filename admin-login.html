@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Login - Wa Japanese Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=12">
+</head>
+<body>
+  <div class="top-banner">
+    MIỄN PHÍ ĐẶT HÀNG <5KM <br/>
+    <small>Giảm giá lên tới 20% khi đặt bàn 5 người</small>
+  </div>
+
+  <main class="admin-login-page">
+    <!-- Full page background image -->
+    <div class="login-background"></div>
+    
+    <!-- Welcome text overlay on left -->
+    <div class="login-welcome-text">
+      <h1>Quản Trị Viên<br/>Wa Japanese Cuisine</h1>
+      <p>Hệ thống quản lý dành riêng cho quản trị viên. Vui lòng đăng nhập để truy cập vào bảng điều khiển quản trị.</p>
+    </div>
+
+    <!-- Admin Login Form Card (floating on right) -->
+    <div class="login-form-card">
+      <div class="login-form-container">
+        <div class="admin-icon" style="margin: 0 auto 20px;">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+        </div>
+        <p class="welcome-back">QUẢN TRỊ VIÊN</p>
+        <h2>Đăng nhập Admin</h2>
+
+        <form class="login-form" id="adminLoginForm">
+          <div class="form-group">
+            <label for="adminPassword">Mật khẩu Admin</label>
+            <input 
+              type="password" 
+              id="adminPassword" 
+              name="adminPassword" 
+              placeholder="Nhập mật khẩu"
+              required
+              autocomplete="off"
+            />
+            <button type="button" class="password-toggle" id="toggleAdminPassword">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <button type="submit" class="btn-login">ĐĂNG NHẬP</button>
+
+          <p class="signup-link">
+            <a href="login.html">← Quay lại đăng nhập thường</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="about">
+        <h3>Wa Japanese Cuisine</h3>
+        <p><strong>Who we are?</strong><br />
+        KITLALA is a global ticketing platform for live experiences that allows anyone to create, share, find and attend events that fuel their passions and enrich their lives.</p>
+        <p><strong>Contact</strong><br />
+        Tickets@contactsbakery@.com</p>
+        <p>©2024 NOT FULLTIME PVT LTD.</p>
+      </div>
+      <div class="help">
+        <h3>Help</h3>
+        <a href="#">Concert Ticketing</a>
+        <a href="#">Account Support</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="legal">
+        <h3>Legal</h3>
+        <a href="#">Terms of Use</a>
+        <a href="#">Acceptable</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="social-icons">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/admin-auth.js?v=1"></script>
+</body>
+</html>

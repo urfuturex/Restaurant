@@ -191,10 +191,8 @@ function showEmptyCart() {
  * Handle checkout
  */
 function handleCheckout() {
-    // Check if user is logged in
-    // For now, just show alert
-    alert('Chức năng thanh toán đang được phát triển');
-    // window.location.href = 'checkout.html';
+    // Navigate to checkout page
+    window.location.href = 'checkout.html';
 }
 
 /**
@@ -281,10 +279,8 @@ function showEmptyCart() {
  * Handle checkout
  */
 function handleCheckout() {
-    // Check if user is logged in
-    // For now, just show alert
-    alert('Chức năng thanh toán đang được phát triển');
-    // window.location.href = 'checkout.html';
+    // Navigate to checkout page
+    window.location.href = 'checkout.html';
 }
 
 /**

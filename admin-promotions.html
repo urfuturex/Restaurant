@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quản Lý Ưu Đãi - Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=8">
+</head>
+<body>
+  <div class="top-banner" style="background: #1a1a1a;">
+    MIỄN PHÍ ĐẶT HÀNG <5KM
+  </div>
+
+  <header style="background: #263238; border-bottom: 2px solid #37474f;">
+    <nav>
+      <button class="menu-toggle" aria-label="Mở/đóng menu">☰</button>
+      <div class="nav-left">
+        <a href="admin-bookings.html" style="color: #aaa;">Đặt chỗ</a>
+        <a href="admin-orders.html" style="color: #aaa;">Đơn hàng</a>
+        <a href="#" style="color: #aaa;">Báo cáo</a>
+        <a href="admin-promotions.html" style="color: white; font-weight: 600;">Ưu đãi</a>
+      </div>
+      <div class="nav-right">
+        <span style="color: white; margin-right: 15px;">Admin</span>
+        <button onclick="handleAdminLogout()" style="background: #d32f2f; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+          Đăng xuất
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-promotions-page">
+    <div class="container">
+      <h2 style="font-size: 2rem; margin-bottom: 30px; color: #263238;">Thiết lập ưu đãi</h2>
+      
+      <!-- Promotion Setup Form -->
+      <div class="promotion-setup-form">
+        <div class="form-section">
+          <h3>Thông tin chung</h3>
+          
+          <!-- Customer Search Dropdown -->
+          <div class="form-group">
+            <label for="customerSearch">Tìm kiếm khách hàng</label>
+            <div class="customer-search-wrapper">
+              <input 
+                type="text" 
+                id="customerSearch" 
+                class="customer-search-input" 
+                placeholder="Nhập tên khách hàng..."
+                autocomplete="off"
+              />
+              <div class="customer-dropdown" id="customerDropdown"></div>
+            </div>
+            <div class="selected-customer" id="selectedCustomer"></div>
+          </div>
+
+          <!-- Note -->
+          <div class="form-group">
+            <label for="promotionNote">Ghi chú</label>
+            <textarea 
+              id="promotionNote" 
+              class="form-textarea" 
+              placeholder="Nhập ghi chú..."
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Mức ưu đãi</h3>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="discountAmount">Mức giảm</label>
+              <input 
+                type="number" 
+                id="discountAmount" 
+                class="form-input" 
+                placeholder="Nhập số tiền hoặc %"
+                min="0"
+              />
+            </div>
+            <div class="form-group">
+              <label for="discountType">Loại</label>
+              <select id="discountType" class="form-select">
+                <option value="percent">%</option>
+                <option value="fixed">Tiền mặt</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Thời gian</h3>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="validFrom">Gửi qua</label>
+              <select id="validFrom" class="form-select">
+                <option value="">Chọn nền tảng</option>
+                <option value="email">Email</option>
+                <option value="sms">SMS</option>
+                <option value="app">App</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="validUntil">Thời gian hết hạn</label>
+              <input 
+                type="text" 
+                id="validUntil" 
+                class="form-input" 
+                placeholder="DD-MM-YY"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Nội dung</h3>
+          
+          <div class="form-group">
+            <label for="promotionMessage">Tin nhắn</label>
+            <textarea 
+              id="promotionMessage" 
+              class="form-textarea" 
+              placeholder="Nhập nội dung tin nhắn..."
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="form-actions">
+          <button class="btn-primary" onclick="sendPromotion()">GỬi</button>
+          <button class="btn-secondary" onclick="saveDraft()">Lưu nháp</button>
+        </div>
+      </div>
+
+      <!-- Promotion History -->
+      <div class="promotion-history">
+        <h2 style="font-size: 1.8rem; margin: 50px 0 30px; color: #263238;">Lịch Sử</h2>
+        
+        <div class="history-table-wrapper">
+          <table class="promotion-history-table">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Liên hệ</th>
+                <th>Tên ưu đãi</th>
+              </tr>
+            </thead>
+            <tbody id="promotionHistoryBody">
+              <!-- Will be populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Wa Japanese Cuisine</h3>
+        <p style="font-size: 0.9rem; color: #aaa;">Chúng tôi là ai?</p>
+        <p style="font-size: 0.85rem; color: #999; max-width: 300px;">
+          Chuỗi nhà hàng Nhật Bản cao cấp mang đến trải nghiệm ẩm thực đích thực với hương vị truyền thống và không gian thanh lịch.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Trợ giúp</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #999;">Hướng dẫn chung</a></li>
+          <li><a href="#" style="color: #999;">Hỗ trợ tài khoản</a></li>
+          <li><a href="#" style="color: #999;">Điều khoản & Điều kiện</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Pháp lý</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #999;">Điều khoản sử dụng</a></li>
+          <li><a href="#" style="color: #999;">Chấp nhận</a></li>
+          <li><a href="#" style="color: #999;">Chính sách bảo mật</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; padding: 20px; border-top: 1px solid #333; color: #666;">
+      ©2024 NOT KULTURE PVTLTD
+    </div>
+  </footer>
+
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-promotions.js?v=1"></script>
+</body>
+</html>
